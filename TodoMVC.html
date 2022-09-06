@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TodoMVC</title>
+        <link href="styles/tomvc.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="head">todos</div>
+        
+        <div class="item">
+            <button id="allchoose"><img src="icon/allunchoose.svg" id="select"></button>
+            <input type="text" id="todo" placeholder="What needs to be done?" autocomplete="off">
+            
+            <div id="todoall"></div>
+            
+            <div id="foot">
+                <div id="left"></div>
+                <div id="center">
+                    <div id="p1">All</div>
+                    <div id="p2">Active</div>
+                    <div id="p3">Completed</div>
+                </div>
+                <div id="right">Clear completed</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Double-click to edit a todo</p>
+            <p>Created by <a href="https://github.com/remojansen/">Remo H. Jansen</a></p>
+            <p>Part of <a href="https://todomvc.com/">TodoMVC</a></p>
+        </div>
+        <script src="scripts/todomvc.js"></script>
+    </body>
+</html>

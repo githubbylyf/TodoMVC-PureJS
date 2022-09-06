@@ -1,0 +1,261 @@
+body {
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #4d4d4d;
+    font-weight: 100;
+}
+
+.head {
+    margin: 15px 0;
+    font-size: 100px;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+}
+
+.item {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    width: 550px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%),
+                0 25px 50px 0 rgb(0, 0, 0, 10%);
+}
+
+#allchoose {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 15px;
+    left: 6px;
+    z-index: 4;
+}
+
+#allchoose img {
+    height: 30px;
+    width: 30px;
+    
+}
+
+#todo {
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0px -2px 1px inset rgba(0, 0, 0, 0.03);
+}
+
+input {
+    padding: 16px 16px 16px 60px;
+    outline-style: none;
+    border: 0.5px solid rgb(232, 233, 232);
+    font-size: 1.5em;
+    font-family: inherit;
+    font-weight: 100;
+}
+
+input::placeholder {
+    color: rgb(225, 225, 225);
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.4em ;
+}
+
+#todoall div {
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid rgb(232, 233, 232);
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    display: block;
+    overflow-wrap: break-word;
+    padding: 16px 16px 16px 60px;
+    font-size: 1.5em;
+    position: relative;
+    z-index: 2;
+}
+
+#todoall input {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    margin: auto 10px;
+    width: 37px;
+    height: 37px;
+    z-index: 4;
+}
+
+#todoall input + label {
+    background-image: url(../icon/unchoose.svg);
+    background-size: 45px;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+#todoall input:checked + label {
+    color: rgb(217, 217, 217);
+    text-decoration: line-through;
+    background-image: url(../icon/choose.svg);
+    background-size: 45px;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+#todoall div:focus-within input{
+    display: none;
+}
+
+#todoall div label:focus-visible {
+    background-image: none;
+    padding: 16px 16px 16px 20px;
+    margin: -1px -1px -1px 39px;
+    outline: none;
+    border: rgb(135, 135, 135) solid 1px;
+    box-shadow: inset 0px 0px 4px rgb(135, 135, 135);
+    cursor: text;
+}
+
+#todoall div:focus-within button {
+    display: none;
+}
+
+#todoall button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 14px;
+    bottom: 20px;
+    z-index: 3;
+    padding: 0;
+    display: flex;
+}
+
+#todoall img {
+    visibility: hidden;
+    width: 14px;
+    height: 14px;
+}
+
+#todoall div:hover button > img {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+#todoall div:hover button > img:hover {
+    opacity: 1;
+}
+
+#foot {
+    background-color: rgb(255, 255, 255);
+    color: rgb(191, 192, 191);
+    border: 0.5px solid rgb(232, 233, 232);
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 2px 0.5px rgb(193, 193, 193);
+}
+
+#foot[class] {
+    display: none;
+}
+
+#foot::before {
+    content: '';
+    height: 60px;
+    width: 540px;
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid rgb(232, 233, 232);
+    box-shadow: 0px 0px 2px 0.5px rgb(193, 193, 193);
+    position: absolute;
+    z-index: -1;
+}
+#foot[class]::before {
+    display: none;
+}
+
+#foot::after {
+    content: '';
+    height: 70px;
+    width: 530px;
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid rgb(232, 233, 232);
+    box-shadow: 0px 0px 2px 0.5px rgb(193, 193, 193);
+    position: absolute;
+    z-index: -2;
+}
+#foot[class]::after {
+    display: none;
+}
+
+#left {
+    cursor: default;
+    width: 64px;
+    text-align: center;
+}
+
+#center {
+    display: flex;
+    margin: auto 60px;
+}
+
+div[data-bord] {
+    padding: 3px 4px;
+    border: solid rgb(255, 255, 255);
+    border-radius: 6px;
+}
+
+div[data-bord="noclick"]:hover {
+    border: solid rgba(175, 47, 47, 0.1);
+}
+
+div[data-bord="click"] {
+    padding: 3px 4px;
+    border: solid rgba(175, 47, 47, 0.2);
+    border-radius: 6px;
+}
+
+#p2 {
+    margin: 0 15px;
+}
+
+#p1, #p2, #p3, #right {
+    cursor: pointer;
+}
+
+div[data-hide='visible']{
+    visibility: visible;
+}
+
+div[data-hide='unvisible']{
+    visibility: hidden;
+}
+
+#right:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    margin: 60px auto;
+}
+
+p {
+    font-size: 10px;
+    text-align: center;
+    color: #bfbfbf;
+    line-height: 15px;
+}
+
+a {
+    color: rgb(177, 178, 177);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
